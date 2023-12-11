@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+button{
+    width: 170px;
+    height: 50px;
+    background: black;
+    color: aliceblue;
+    font-size: 20px;
+    border: 2px solid white;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin-top 5s ease;
+    
+}
+
+@keyframes animatebutton{
+    0% ,10.1%,30%,40.1%,60%,75.1%,85%,95%{
+        background: blueviolet;
+        box-shadow: 0 0 10px blueviolet,
+        0 0 30px blueviolet,
+        0 0 40px blueviolet,
+        0 0 60px blueviolet,
+        0 0 80px blueviolet;
+    }
+    10%,30%,40%,60%,75%,85%,95%,100%{
+        background: rgb(180, 226, 43);
+        box-shadow: 0 0 10px rgb(156, 226, 43),
+        0 0 30px rgb(198, 226, 43),
+        0 0 40px rgb(192, 226, 43),
+        0 0 60px rgb(211, 226, 43),
+        0 0 80px rgb(202, 226, 43);
+    }
+
+}
+
+button:hover{
+    margin-top: 30px;
+    animation: animatebutton 1s ease infinite;
+}
+button::before{
+    content: 'Happy Halloween';
+    position: absolute;
+    font-size: 50px;
+    z-index: -1;
+    -webkit-text-stroke: 2px white;
+    transform: scale(0);
+    transition: transform 1s ease;
+    animation: animateText 1s linear infinite;
+}
+
+@keyframes animateText{
+    0% ,10%,30%,40%,60%,75%,85%,95%{
+        color: blueviolet;
+        text-shadow: 0 0 10px blueviolet,
+        0 0 30px blueviolet,
+        0 0 40px blueviolet,
+        0 0 60px blueviolet,
+        0 0 80px blueviolet;
+    }
+    10%,30%,40%,60%,75%,85%,95%,100%{
+        color: rgb(180, 226, 43);
+        text-shadow: 0 0 10px rgb(156, 226, 43),
+        0 0 30px rgb(198, 226, 43),
+        0 0 40px rgb(192, 226, 43),
+        0 0 60px rgb(211, 226, 43),
+        0 0 80px rgb(202, 226, 43);
+    }
+
+}
+button:hover::before{
+    transform: scale(1) translateY(-150px);
+}
